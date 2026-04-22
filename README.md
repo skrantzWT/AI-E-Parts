@@ -21,6 +21,7 @@ AI E-Parts/
     prompts.py
   data/
     eval_cases.json
+    eparts_workflow_notes.md
     logs/
   scripts/
     smoke_test.py
@@ -119,6 +120,12 @@ python scripts/smoke_test.py
 
 This loads `data/eval_cases.json`, calls the parser, and prints the resulting structured intents.
 
+## Current eParts findings
+
+- The training workflow summary is captured in [data/eparts_workflow_notes.md](data/eparts_workflow_notes.md).
+- The currently configured `EPARTS_BASE_URL` returns an `Access Denied` / HTTP `403` page to Playwright from this environment.
+- The automation layer now reports that blocked state explicitly and saves a screenshot artifact instead of assuming a login page.
+
 ## Recording eParts flows
 
 Use Playwright code generation to capture real selectors:
@@ -145,4 +152,3 @@ Start Codex CLI in the repo root and feed it bounded prompts like:
 - `Add parser edge-case tests for ambiguous model vs serial requests.`
 - `Refactor automation.py to use traced Playwright sessions and screenshot-on-failure.`
 - `Implement the Workmaster 75 model-search path using recorded selectors.`
-

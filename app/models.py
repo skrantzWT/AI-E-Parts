@@ -16,15 +16,18 @@ class ParsedRequest(BaseModel):
 
 
 class LookupResult(BaseModel):
-    status: Literal["stub", "success", "not_found", "error"] = "stub"
+    status: Literal["stub", "success", "not_found", "error", "blocked"] = "stub"
     part_number: str | None = None
     description: str | None = None
     source_path: str | None = None
     warnings: list[str] = Field(default_factory=list)
     screenshot_path: str | None = None
+    entry_state: Literal["public", "login_required", "blocked", "unknown"] | None = None
+    page_title: str | None = None
+    final_url: str | None = None
+    http_status: int | None = None
 
 
 class LookupResponse(BaseModel):
     parsed: ParsedRequest
     result: LookupResult
-
