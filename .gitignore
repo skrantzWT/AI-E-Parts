@@ -8,4 +8,4 @@ playwright/.auth/
 auth.json
 *.png
 *.pyc
-
+gcm-diagnose.log
