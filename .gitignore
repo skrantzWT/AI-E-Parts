@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+data/logs/
+data/artifacts/
+playwright/.auth/
+auth.json
+*.png
+*.pyc
+

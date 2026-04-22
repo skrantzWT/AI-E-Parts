@@ -1,0 +1,13 @@
+[
+  {
+    "input": "I need an oil filter for my Workmaster 75",
+    "expected_lookup_type": "model",
+    "expected_requested_part": "oil filter"
+  },
+  {
+    "input": "VIN ABC123456, I need an air filter",
+    "expected_lookup_type": "serial",
+    "expected_requested_part": "air filter"
+  }
+]
+
