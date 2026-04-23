@@ -4,12 +4,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "npx playwright test",
-    "codegen": "npx playwright codegen",
-    "install": "npm install"
+    "test": "playwright test",
+    "test:auth": "playwright test --project=setup",
+    "test:headed": "playwright test --headed",
+    "codegen": "playwright codegen",
+    "pw:install": "playwright install"
   },
   "devDependencies": {
     "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.2",
+    "dotenv": "^16.4.7",
     "playwright": "^1.49.0",
     "typescript": "^5.8.0"
   }

@@ -2,11 +2,13 @@
 __pycache__/
 .pytest_cache/
 .env
+node_modules/
 data/logs/
 data/artifacts/
 automation/node_modules/
 automation/test-results/
 automation/.auth/
+automation/playwright/.auth/
 auth.json
 *.png
 *.pyc
