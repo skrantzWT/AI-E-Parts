@@ -4,7 +4,9 @@ __pycache__/
 .env
 data/logs/
 data/artifacts/
-playwright/.auth/
+automation/node_modules/
+automation/test-results/
+automation/.auth/
 auth.json
 *.png
 *.pyc

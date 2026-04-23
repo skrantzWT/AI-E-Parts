@@ -1,0 +1,12 @@
+{
+  "name": "ai-e-parts",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "automation"
+  ],
+  "scripts": {
+    "automation:install": "npm --prefix automation install",
+    "automation:test": "npm --prefix automation test"
+  }
+}

@@ -11,7 +11,7 @@ Starter scaffold for an eParts lookup service with four layers:
 
 ```text
 AI E-Parts/
-  app/
+  app/                 ← your intelligence layer (LLM + parsing)
     __init__.py
     automation.py
     logging_utils.py
@@ -19,6 +19,16 @@ AI E-Parts/
     models.py
     parser.py
     prompts.py
+  automation/          ← Playwright subsystem for browser execution
+    README.md
+    package.json
+    playwright.config.ts
+    src/
+      index.ts
+      lookup.ts
+    tests/
+      auth.setup.ts
+      lookup.spec.ts
   data/
     eval_cases.json
     eparts_workflow_notes.md
@@ -31,6 +41,7 @@ AI E-Parts/
   .gitignore
   README.md
   requirements.txt
+  package.json
 ```
 
 ## Prerequisites
@@ -82,6 +93,25 @@ EPARTS_BASE_URL=https://your-eparts-url
 EPARTS_USERNAME=your_username
 EPARTS_PASSWORD=your_password
 EPARTS_HEADLESS=true
+```
+
+## Automation subsystem
+
+The Playwright automation lives in `automation/` as a separate subsystem within the same repo. This keeps the browser executor isolated while allowing the Python agent to remain the intelligence layer.
+
+Install and run it from the repo root:
+
+```bash
+npm install
+npm run automation:install
+npm run automation:test
+```
+
+Then record real eParts selectors with:
+
+```bash
+cd automation
+npx playwright codegen
 ```
 
 ## Run the API
